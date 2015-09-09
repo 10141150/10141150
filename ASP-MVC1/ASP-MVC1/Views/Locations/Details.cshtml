@@ -1,0 +1,42 @@
+﻿@model ASP_MVC1.Models.Location
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Location</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.department)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.department)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.responsible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.responsible)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_location }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
