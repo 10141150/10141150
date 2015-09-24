@@ -1,0 +1,51 @@
+﻿@model IEnumerable<sesion01.Models.Device>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.unam_stock_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serial_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location.department)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.unam_stock_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.serial_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location.department)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_device }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_device }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_device })
+        </td>
+    </tr>
+}
+
+</table>
